@@ -1,5 +1,3 @@
-
-
 (function ($) {
     // USE STRICT
     "use strict";
@@ -7,11 +5,11 @@
         /*[ Slick1 ]
         ===========================================================*/
         var itemSlick1 = $('.slick1').find('.item-slick1');
+        var cap1Slide1 = [];
+        var cap2Slide1 = [];
         var action1 = [];
         var action2 = [];
         var action3 = [];
-        var cap1Slide1 = [];
-        var cap2Slide1 = [];
         var btnSlide1 = [];
 
         for(var i=0; i<itemSlick1.length; i++) {
@@ -36,7 +34,6 @@
             },1800);              
         });
 
-
         $('.slick1').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -60,11 +57,9 @@
               clearTimeout(action2[i]);
               clearTimeout(action3[i]);
 
-
               $(cap1Slide1[i]).removeClass($(cap1Slide1[i]).data('appear') + ' visible-true');
               $(cap2Slide1[i]).removeClass($(cap2Slide1[i]).data('appear') + ' visible-true');
               $(btnSlide1[i]).removeClass($(btnSlide1[i]).data('appear') + ' visible-true');
-
             }
 
             action1[currentSlide] = setTimeout(function(){
@@ -79,8 +74,6 @@
                 $(btnSlide1[currentSlide]).addClass($(btnSlide1)[currentSlide].data('appear') + ' visible-true');
             },1800);            
         });
-
-
         
         /*[ Slick2 ]
         ===========================================================*/
@@ -103,17 +96,17 @@
                   }
                 },
                 {
-                  breakpoint: 992,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                  }
-                },
-                {
                   breakpoint: 768,
                   settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
+                  }
+                },
+                {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
                   }
                 },
                 {
@@ -134,10 +127,10 @@
             slidesToScroll: 1,
             fade: true,
             dots: true,
-            appendDots: $('.wrap-slick3-dots'),
-            dotsClass:'slick3-dots',
             infinite: true,
             autoplay: false,
+            appendDots: $('.wrap-slick3-dots'),
+            dotsClass:'slick3-dots',
             autoplaySpeed: 6000,
             arrows: false,
             customPaging: function(slick, index) {
@@ -145,7 +138,4 @@
                 return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
             },  
         });
-
-        
-
 })(jQuery);
