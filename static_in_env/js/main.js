@@ -10,12 +10,12 @@
         inDuration: 1500,
         outDuration: 800,
         linkElement: '.animsition-link',
-        loading: true,
-        loadingParentElement: 'html',
-        loadingClass: 'animsition-loading-1',
         loadingInner: '<div data-loader="ball-scale"></div>',
         timeout: false,
         timeoutCountdown: 5000,
+        loading: true,
+        loadingParentElement: 'html',
+        loadingClass: 'animsition-loading-1',
         onLoadEvent: true,
         browser: [ 'animation-duration', '-webkit-animation-duration'],
         overlay : false,
@@ -141,14 +141,6 @@
         }
     });
 
-
-    /*[ remove top noti ]
-    ===========================================================*/
-    $('.btn-romove-top-noti').on('click', function(){
-        $(this).parent().remove();
-    })
-
-
     /*[ Block2 button wishlist ]
     ===========================================================*/
     $('.block2-btn-addwishlist').on('click', function(e){
@@ -156,6 +148,22 @@
         $(this).addClass('block2-btn-towishlist');
         $(this).removeClass('block2-btn-addwishlist');
         $(this).off('click');
+    });
+    
+    /*[ remove top noti ]
+    ===========================================================*/
+    $('.btn-romove-top-noti').on('click', function(){
+        $(this).parent().remove();
+    })
+
+    /*[ Show content Product detail ]
+    ===========================================================*/
+    $('.active-dropdown-content .js-toggle-dropdown-content').toggleClass('show-dropdown-content');
+    $('.active-dropdown-content .dropdown-content').slideToggle('fast');
+
+    $('.js-toggle-dropdown-content').on('click', function(){
+        $(this).toggleClass('show-dropdown-content');
+        $(this).parent().find('.dropdown-content').slideToggle('fast');
     });
 
     /*[ +/- num product ]
@@ -171,19 +179,7 @@
         var numProduct = Number($(this).prev().val());
         $(this).prev().val(numProduct + 1);
     });
-
-
-    /*[ Show content Product detail ]
-    ===========================================================*/
-    $('.active-dropdown-content .js-toggle-dropdown-content').toggleClass('show-dropdown-content');
-    $('.active-dropdown-content .dropdown-content').slideToggle('fast');
-
-    $('.js-toggle-dropdown-content').on('click', function(){
-        $(this).toggleClass('show-dropdown-content');
-        $(this).parent().find('.dropdown-content').slideToggle('fast');
-    });
-
-
+    
     /*[ Play video 01]
     ===========================================================*/
     var srcOld = $('.video-mo-01').children('iframe').attr('src');
